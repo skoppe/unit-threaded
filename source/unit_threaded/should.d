@@ -47,6 +47,10 @@ struct Should(T, alias check = checkEqual) {
         check(this.value, other);
         return true;
     }
+
+    int opCmp(U)(U other) @safe const {
+        return 0;
+    }
 }
 
 auto should(T)(T value) {
