@@ -39,3 +39,20 @@ alias shouldNotBeEmpty = checkNotEmpty;
 
 alias shouldBeGreaterThan = checkGreaterThan;
 alias shouldBeSmallerThan = checkSmallerThan;
+
+struct Should(T, alias check = checkEqual) {
+    T value;
+
+    bool opEquals(U)(U other) @safe const {
+        check(this.value, other);
+        return true;
+    }
+}
+
+auto should(T)(T value) {
+    return Should!T(value);
+}
+
+auto shouldNot(T)(T value) {
+    return Should!(T, checkNotEqual)(value);
+}

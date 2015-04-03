@@ -6,6 +6,7 @@ import tests.pass.delayed; ///must be imported to be used as a symbol
 import tests.pass.attributes; ///must be imported to be used as a symbol
 import tests.pass.register; ///must be imported to be used as a symbol
 import tests.pass.io; ///must be imported to be used as a symbol
+import tests.pass.should; ///must be imported to be used as a symbol
 
 import std.stdio;
 
@@ -17,5 +18,6 @@ int main(string[] args) {
                           tests.pass.attributes,
                           tests.pass.register,
                           tests.pass.io,
+                          tests.pass.should,
                           );
 }
